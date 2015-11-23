@@ -12,6 +12,7 @@ class AbstractPage
 
   def initialize (driver = Selenium::WebDriver.for(:firefox))
     @@driver = driver
+    @@driver.manage.window.maximize
   end
 
   def login
