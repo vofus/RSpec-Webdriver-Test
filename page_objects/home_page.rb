@@ -4,9 +4,9 @@ require_relative '../page_objects/registration_page'
 
 class HomePage < AbstractPage
 
-  def initialize (driver)
-    super(driver)
-  end
+  # def initialize (driver)
+  #   super(driver)
+  # end
 
   def navigate_to_autorization
     @enter_btn = @@driver.find_element(:css, 'a.sign-in')          # Кнопка "Вход"

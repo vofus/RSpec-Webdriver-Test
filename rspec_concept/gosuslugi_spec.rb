@@ -8,7 +8,7 @@ require_relative '../page_objects/home_page'
 
 describe 'gosuslugi site' do
 
-  @app = nil
+  # @app = nil
 
   before(:each) do
     @app = AbstractPage.new()
@@ -31,7 +31,7 @@ describe 'gosuslugi site' do
     reg_page = @app.navigate_to_app_root
                    .navigate_to_registration
 
-    expect(reg_page.get_page_title).to be == 'Регистрация'
+    expect(reg_page.get_page_title).to eq 'Регистрация'
     reg_page.output_title
   end
 
@@ -40,7 +40,7 @@ describe 'gosuslugi site' do
     auth_page = @app.navigate_to_app_root
                     .navigate_to_autorization
 
-    expect(auth_page.get_page_title).to be == 'Авторизация'
+    expect(auth_page.get_page_title).to eq 'Авторизация'
     auth_page.output_title
 
     # Переход на страницу личного кабинета
@@ -48,7 +48,7 @@ describe 'gosuslugi site' do
                            .fill_in_password(auth_page.password)
                            .submit_form
 
-    expect(person_page.get_page_title).to be == 'Личный кабинет физического лица'
+    expect(person_page.get_page_title).to eq 'Личный кабинет физического лица'
     person_page.output_title
 
   end
